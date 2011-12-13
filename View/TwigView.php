@@ -17,12 +17,11 @@ if (!defined('TWIG_VIEW_CACHE')) {
 	define('TWIG_VIEW_CACHE', APP.'Plugin'.DS.'TwigView'.DS.'tmp'.DS.'views');
 }
 
-// Load Twig Lib and start auto loader
-//App::import('Vendor', 'TwigView.TwigAutoloader', array(
-//	'file' => 'Twig'.DS.'lib'.DS.'Twig'.DS.'Autoloader.php'
-//));
 require_once(APP . 'Plugin' . DS . 'TwigView' . DS . 'vendors' . DS . 'Twig' . DS . 'lib' . DS . 'Twig' . DS . 'Autoloader.php');
 Twig_Autoloader::register();
+
+require_once(APP . 'Plugin' . DS . 'TwigView' . DS .'vendors' . DS .'Twig-extensions' . DS .'lib' . DS .'Twig' . DS . 'Extensions' . DS . 'Autoloader.php');
+Twig_Extensions_Autoloader::register();
 
 // overwrite Twig_Environment classe
 App::import('Lib', 'TwigView.Ombi60Environment');
