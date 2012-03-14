@@ -90,7 +90,7 @@ if (!defined('IMAGES_URL')) {
 }
 
 if (!defined('SNIPPETS_URL')) {
-	define('SNIPPETS_URL', 'snippets/');
+	define('SNIPPETS_URL', 'Snippets/');
 }
 
 function ombi60SnippetsUrl($filename) {
