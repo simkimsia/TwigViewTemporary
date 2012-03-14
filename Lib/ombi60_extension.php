@@ -74,8 +74,14 @@ if (!defined('JS_URL')) {
 	define('JS_URL', 'js/');
 }
 
+/*
 if (!defined('ASSETS_URL')) {
 	define('ASSETS_URL', 'assets/');
+}
+* we have removed the assets inside webroot and just use webroot directly
+*/
+if (!defined('ASSETS_URL')) {
+	define('ASSETS_URL', '');
 }
 
 
