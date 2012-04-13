@@ -26,22 +26,22 @@ require_once(APP . 'Plugin' . DS . 'TwigView' . DS .'vendors' . DS .'Twig-extens
 Twig_Extensions_Autoloader::register();
 
 // overwrite Twig_Environment classe
-require_once($twigPath . 'Lib' . DS . 'ombi60_environment.php');
+require_once($twigPath . 'Lib' . DS . 'Ombi60_Twig_Environment.php');
 
 // overwrite twig classes (thanks to autoload, no problem)
-require_once($twigPath . 'Lib' . DS . 'trans_node.php');
-require_once($twigPath . 'Lib' . DS . 'tokenparser_trans.php');
+require_once($twigPath . 'Lib' . DS . 'Twig_Node_Trans.php');
+require_once($twigPath . 'Lib' . DS . 'Twig_TokenParser_Trans.php');
 
 // my custom cake extensions
-require_once($twigPath . 'Lib' . DS . 'extension_i18n.php');
-require_once($twigPath . 'Lib' . DS . 'extension_ago.php');
-require_once($twigPath . 'Lib' . DS . 'extension_basic.php');
-require_once($twigPath . 'Lib' . DS . 'extension_numbers.php');
-require_once($twigPath . 'Lib' . DS . 'ombi60_extension.php');
+require_once($twigPath . 'Lib' . DS . 'Twig_Extension_I18n.php');
+require_once($twigPath . 'Lib' . DS . 'Twig_Extension_TimeAgo.php');
+require_once($twigPath . 'Lib' . DS . 'Twig_Extension_Basic.php');
+require_once($twigPath . 'Lib' . DS . 'Twig_Extension_Number.php');
+require_once($twigPath . 'Lib' . DS . 'Ombi60_Twig_Extension.php');
 
 
 // get twig core extension (overwrite trans block)
-require_once($twigPath . 'Lib' . DS . 'core_extension.php');
+require_once($twigPath . 'Lib' . DS . 'CoreExtension.php');
 
 
 /**
