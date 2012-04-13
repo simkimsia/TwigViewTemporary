@@ -17,6 +17,8 @@ if (!defined('TWIG_VIEW_CACHE')) {
 	define('TWIG_VIEW_CACHE', APP.'Plugin'.DS.'TwigView'.DS.'tmp'.DS.'views');
 }
 
+$twigPath = CakePlugin::path('TwigView');
+
 require_once(APP . 'Plugin' . DS . 'TwigView' . DS . 'vendors' . DS . 'Twig' . DS . 'lib' . DS . 'Twig' . DS . 'Autoloader.php');
 Twig_Autoloader::register();
 
@@ -24,22 +26,23 @@ require_once(APP . 'Plugin' . DS . 'TwigView' . DS .'vendors' . DS .'Twig-extens
 Twig_Extensions_Autoloader::register();
 
 // overwrite Twig_Environment classe
-App::import('Lib', 'TwigView.Ombi60Environment');
+require_once($twigPath . 'Lib' . DS . 'ombi60_environment.php');
 
 // overwrite twig classes (thanks to autoload, no problem)
-App::import('Lib', 'TwigView.TransNode');
-App::import('Lib', 'TwigView.TokenparserTrans');
+require_once($twigPath . 'Lib' . DS . 'trans_node.php');
+require_once($twigPath . 'Lib' . DS . 'tokenparser_trans.php');
 
 // my custom cake extensions
-App::import('Lib', 'TwigView.ExtensionI18n');
-App::import('Lib', 'TwigView.ExtensionAgo');
-App::import('Lib', 'TwigView.ExtensionBasic');
-App::import('Lib', 'TwigView.ExtensionNumbers');
-App::import('Lib', 'TwigView.Ombi60Extension');
+require_once($twigPath . 'Lib' . DS . 'extension_i18n.php');
+require_once($twigPath . 'Lib' . DS . 'extension_ago.php');
+require_once($twigPath . 'Lib' . DS . 'extension_basic.php');
+require_once($twigPath . 'Lib' . DS . 'extension_numbers.php');
+require_once($twigPath . 'Lib' . DS . 'ombi60_extension.php');
 
 
 // get twig core extension (overwrite trans block)
-App::import('Lib', 'TwigView.CoreExtension');
+require_once($twigPath . 'Lib' . DS . 'core_extension.php');
+
 
 /**
  * TwigView for CakePHP
