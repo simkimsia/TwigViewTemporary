@@ -19,10 +19,10 @@ if (!defined('TWIG_VIEW_CACHE')) {
 
 $twigPath = CakePlugin::path('TwigView');
 
-require_once(APP . 'Plugin' . DS . 'TwigView' . DS . 'vendors' . DS . 'Twig' . DS . 'lib' . DS . 'Twig' . DS . 'Autoloader.php');
+require_once(APP . 'Plugin' . DS . 'TwigView' . DS . 'Vendor' . DS . 'Twig' . DS . 'lib' . DS . 'Twig' . DS . 'Autoloader.php');
 Twig_Autoloader::register();
 
-require_once(APP . 'Plugin' . DS . 'TwigView' . DS .'vendors' . DS .'Twig-extensions' . DS .'lib' . DS .'Twig' . DS . 'Extensions' . DS . 'Autoloader.php');
+require_once(APP . 'Plugin' . DS . 'TwigView' . DS .'Vendor' . DS .'Twig-extensions' . DS .'lib' . DS .'Twig' . DS . 'Extensions' . DS . 'Autoloader.php');
 Twig_Extensions_Autoloader::register();
 
 // overwrite Twig_Environment classe
