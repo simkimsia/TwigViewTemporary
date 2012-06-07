@@ -167,15 +167,17 @@ function ombi60AssetUrl($filename) {
 		if ($filename[0] !== '/') {
 			$filename = ASSETS_URL . $filename;
 		}
-		
+
 		if (strpos($filename, '?') === false) {
 			if (substr($filename, -3) !== '.js') {
 				$filename .= '.js';
 			}
 		}
 		$url = $htmlHelper->assetTimestamp($htmlHelper->webroot($filename));
-		
-		return '/' . $url;
+
+		if (substr($url, 0, 1) != '/')
+		    $url = '/' . $url;
+		return $url;
 	}
 	// should be limited to these file extensions for time being
 	if (preg_match("/\.png|.jpg|.jpeg|.gif|.tiff$/", $filename)) {
